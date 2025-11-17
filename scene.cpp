@@ -13,7 +13,7 @@
 
 #define QUOTE 1
 
-#define FANCY false
+#define FANCY true
 
 void setup_camera(){
 	camera.w = 600;
@@ -36,10 +36,10 @@ void setup_camera(){
 	camera.bounces = 5;
 
 	if(FANCY){
-		camera.spp = 64;
-		camera.w *= 2;
-		camera.h *= 2;
-		camera.c *= 2;
+		camera.spp = 256;
+		camera.w *= 4;
+		camera.h *= 4;
+		camera.c *= 4;
 	}
 }
 
