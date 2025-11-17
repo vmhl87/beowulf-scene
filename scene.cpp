@@ -21,11 +21,9 @@ void setup_camera(){
 	camera.c = 600;
 
 	vec origin = { 5, 6, 0};
-	// origin = { 0, 6, 0};
 
 	float theta = M_PI * 0;
 	theta = M_PI * 2.0 * camera.time / 5.0;
-	// theta = M_PI * -0.3;
 	camera.p = vec{ sin(theta)*24, 1, -cos(theta)*24 } + origin;
 
 	camera.t.z = (camera.p-origin).norm() * -1.0;
@@ -44,11 +42,7 @@ void setup_camera(){
 }
 
 color sky(vec d){
-	// return vec{.075, .06, .05};
-	// if(FANCY) return vec{.1, .1, .1};
-	// return vec{.5, .5, .5};
 	return vec{.45, .35, .25};
-	// return vec{1, 1, 1};
 }
 
 void line(vec a, vec b, material M, float W, vec _cam) {
@@ -146,15 +140,6 @@ void setup_scene(){
 		);
 
 		// torso
-
-		/*
-		line(
-			{ -0.25, 3.75, 0 },
-			{ -1.3, 2, 0 },
-			material::diffuse({0.87, 0.66, 0.45}),
-			.15
-		);
-		*/
 
 		vec Z = (vec{-1.3+.25, 2-3.75, 0}).norm(),
 			X = (vec{-0.25, 0.05, 0.5}).norm(),
@@ -326,17 +311,6 @@ void setup_scene(){
 				});
 			};
 		};
-
-		// hips
-
-		/*
-		line(
-			{ -1.3, 2, -0.4 },
-			{ -1.3, 2, 0.4 },
-			material::metal({0.75, 0.25, 0.25}, 5),
-			.15
-		);
-		*/
 
 		// back leg
 
