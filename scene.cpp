@@ -11,7 +11,7 @@
 #define DRAGON_WINGS 1
 #define DRAGON_LEGS 1
 
-#define QUOTE 0
+#define QUOTE 1
 
 #define FANCY true
 
@@ -24,8 +24,7 @@ void setup_camera(){
 
 	float theta = M_PI * 0;
 	theta = M_PI * 2.0 * camera.time / 5.0;
-	//camera.p = vec{ sin(theta)*24, 1, -cos(theta)*24 } + origin;
-	camera.p = vec{ sin(theta)*36, 1.5, -cos(theta)*36 } + origin;
+	camera.p = vec{ sin(theta)*24, 1, -cos(theta)*24 } + origin;
 
 	camera.t.z = (camera.p-origin).norm() * -1.0;
 	camera.t.init();
@@ -35,10 +34,10 @@ void setup_camera(){
 	camera.bounces = 5;
 
 	if(FANCY){
-		camera.spp = 64;
-		camera.w *= 2;
-		camera.h *= 2;
-		camera.c *= 2;
+		camera.spp = 256;
+		camera.w *= 4;
+		camera.h *= 4;
+		camera.c *= 4;
 	}
 }
 
