@@ -20,6 +20,9 @@ void setup_camera(){
 	camera.h = 400;
 	camera.c = 600;
 
+	camera.exposure = 1.5;
+	camera.gamma = 3;
+
 	vec origin = { 5, 6, 0};
 
 	float theta = M_PI * 0;
@@ -273,7 +276,8 @@ void setup_scene(){
 						.z = { 0, 1, 0 },
 						.t = &t2,
 					},
-					.m = material::light({6, 2, .75}),
+					// .m = material::light({6, 2, .75}),
+					.m = material::light({3, 1, .375}),
 					.image = img,
 					.imgh = _h,
 					.imgw = _w,
@@ -541,7 +545,8 @@ void setup_scene(){
 					.p = { 0, 0, 7 },
 					.t = &t1,
 				},
-				.m = material::light({4, 0.75, 0}),
+				// .m = material::light({4, 0.75, 0}),
+				.m = material::light({2, 0.25, 0}),
 				.image = img,
 				.imgh = _h,
 				.imgw = _w,
@@ -654,7 +659,8 @@ void setup_scene(){
 				.y = camera.t.z,
 				.z = camera.t.y,
 			},
-			.m = material::light({6, 2, .75}),
+			// .m = material::light({6, 2, .75}),
+			.m = material::diffuse({0.05, 0.05, 0.05}),
 			.image = img,
 			.imgh = _h,
 			.imgw = _w,
